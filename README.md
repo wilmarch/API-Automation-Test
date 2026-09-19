@@ -109,8 +109,6 @@ Setelah run test, generate & buka report-nya:
 allure serve build/allure-results
 ```
 
-> Perlu **Allure Commandline** ter-install di komputer kamu ([panduan instalasi](https://allurereport.org/docs/install/)).
-
 Report standar Gradle/TestNG juga tetap tersedia di `build/reports/tests/test/index.html`.
 
 ## Catatan
