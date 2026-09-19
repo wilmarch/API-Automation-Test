@@ -14,7 +14,7 @@ public class AuthTest extends BaseTest {
     // Positif 1: Login Sukses
     @Test(priority = 1)
     public void testLoginSuccess() {
-        Response response = AuthRequest.login("rezzkoike1@example.com", "Password123");
+        Response response = AuthRequest.login("rusdi1@example.com", "Barber123");
 
         response.then().log().ifValidationFails();
 

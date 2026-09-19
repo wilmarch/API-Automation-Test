@@ -17,7 +17,7 @@ public class SiswaTest extends BaseTest {
 
     @BeforeClass
     public void getAuthToken() {
-        Response response = AuthRequest.login("rezzkoike1@example.com", "Password123");
+        Response response = AuthRequest.login("rusdi1@example.com", "Barber123");
         token = response.jsonPath().getString("data.token");
     }
 
