@@ -87,5 +87,5 @@ Report standar Gradle/TestNG juga tetap tersedia di `build/reports/tests/test/in
 
 ## Catatan
 
-- Kredensial di `AuthTest`/`SiswaTest` (`rezzkoike1@example.com` / `Password123`) adalah akun **dummy/test** yang di-hardcode untuk kebutuhan demo — bukan kredensial produksi.
+- Kredensial di `AuthTest`/`SiswaTest` menggunakan akun **dummy/test** untuk kebutuhan demo (lihat kode sumber atau environment variable lokal) — bukan kredensial produksi, dan sengaja tidak ditampilkan di sini.
 - NIS siswa di-generate dinamis dari timestamp (`System.currentTimeMillis()`) supaya test bisa di-run berkali-kali tanpa bentrok data unik.
