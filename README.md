@@ -16,23 +16,23 @@ Automated API testing suite untuk endpoint **Authentication** dan **Siswa (Stude
 
 ## Struktur Project
 
+```
 src/test/
 ├── java/
-│ ├── requests/ → wrapper RestAssured murni (return Response, tanpa assertion)
-│ │ ├── AuthRequest.java
-│ │ └── SiswaRequest.java
-│ ├── tests/ → test class berisi assertion (TestNG @Test)
-│ │ ├── AuthTest.java
-│ │ └── SiswaTest.java
-│ └── utils/
-│ └── BaseTest.java → setup global (baseURI, login akun dummy)
+│   ├── requests/          → wrapper RestAssured murni (return Response, tanpa assertion)
+│   │   ├── AuthRequest.java
+│   │   └── SiswaRequest.java
+│   ├── tests/             → test class berisi assertion (TestNG @Test)
+│   │   ├── AuthTest.java
+│   │   └── SiswaTest.java
+│   └── utils/
+│       └── BaseTest.java  → setup global (baseURI, login akun dummy)
 └── resources/
-├── testng.xml → TestNG suite definition + listener Allure
-├── allure.properties → lokasi output Allure results
-└── schemas/
-└── LoginSchema.json → JSON schema untuk validasi response login
-
-
+    ├── testng.xml         → TestNG suite definition + listener Allure
+    ├── allure.properties  → lokasi output Allure results
+    └── schemas/
+        └── LoginSchema.json  → JSON schema untuk validasi response login (opsional)
+```
 
 **Pola desain**: 3 layer terpisah — `requests/` (murni HTTP call), `tests/` (assertion + business logic), `utils/` (setup sekali di awal run). Request builder di `requests/` sengaja dipisah dari assertion supaya reusable dan gampang di-maintain kalau endpoint berubah.
 
@@ -44,6 +44,7 @@ src/test/
 ## Cakupan Test (18 test case)
 
 ### AuthTest — 7 test case
+
 | Test | Deskripsi |
 |---|---|
 | `testRegisterSuccess` | Registrasi akun baru dengan email unik (timestamp) → status 200/201, cek `success`, `message`, `data.id`, `data.email` |
@@ -55,6 +56,7 @@ src/test/
 | `testLogoutSuccess` | Login pakai akun hasil registrasi, lalu logout → status 200, pesan sukses |
 
 ### SiswaTest — 11 test case (CRUD, sebagian saling `dependsOnMethods`)
+
 | Test | Deskripsi |
 |---|---|
 | `testGetAllSiswaSuccess` | Ambil seluruh data siswa (pagination default) → status 200 |
@@ -76,6 +78,7 @@ gradle clean test
 ```
 
 Config TestNG suite-nya udah di-wire lewat `build.gradle`:
+
 ```groovy
 test {
     useTestNG {
@@ -87,17 +90,21 @@ test {
 ## Melihat Report
 
 Test ini pakai filter **AllureRestAssured**, jadi tiap request/response otomatis ke-capture. Listener Allure didaftarkan manual di `testng.xml`:
+
 ```xml
 <listeners>
     <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
 </listeners>
 ```
+
 dan lokasi hasil mentahnya diarahkan lewat `src/test/resources/allure.properties`:
+
 ```properties
 allure.results.directory=build/allure-results
 ```
 
 Setelah run test, generate & buka report-nya:
+
 ```bash
 allure serve build/allure-results
 ```
