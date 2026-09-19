@@ -1,0 +1,37 @@
+<div>POST to https://api.rizqifauzan.com/api/siswa</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;nama&quot;: &quot;Rusdi Barber&quot;,
+    &quot;kelas&quot;: &quot;X-IPA-1&quot;,
+    &quot;telepon&quot;: &quot;+628123456789&quot;,
+    &quot;nis&quot;: &quot;497779&quot;,
+    &quot;jurusan&quot;: &quot;IPA&quot;,
+    &quot;email&quot;: &quot;rusdibarber497779@example.com&quot;,
+    &quot;alamat&quot;: &quot;Jl. Ngawi No. 67&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIwODM1MzIwMi02YTk3LTQ3ZGQtYjdmNi04NjJjODI3NWE2ZDciLCJlbWFpbCI6InJ1c2RpMUBleGFtcGxlLmNvbSIsIm5hbWEiOiJSdXNkaSBHaW1hbmciLCJpYXQiOjE3ODk4MDg0OTEsImV4cCI6MTc5MDQxMzI5MX0.R83vu72mWzkYelPSMMXBuMaKbssTuJuplNsAjru19bI</div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://api.rizqifauzan.com/api/siswa&#39; -H &#39;Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIwODM1MzIwMi02YTk3LTQ3ZGQtYjdmNi04NjJjODI3NWE2ZDciLCJlbWFpbCI6InJ1c2RpMUBleGFtcGxlLmNvbSIsIm5hbWEiOiJSdXNkaSBHaW1hbmciLCJpYXQiOjE3ODk4MDg0OTEsImV4cCI6MTc5MDQxMzI5MX0.R83vu72mWzkYelPSMMXBuMaKbssTuJuplNsAjru19bI&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;nama&quot;: &quot;Rusdi Barber&quot;,
+    &quot;kelas&quot;: &quot;X-IPA-1&quot;,
+    &quot;telepon&quot;: &quot;+628123456789&quot;,
+    &quot;nis&quot;: &quot;497779&quot;,
+    &quot;jurusan&quot;: &quot;IPA&quot;,
+    &quot;email&quot;: &quot;rusdibarber497779@example.com&quot;,
+    &quot;alamat&quot;: &quot;Jl. Ngawi No. 67&quot;
+}&#39;
+</div>
