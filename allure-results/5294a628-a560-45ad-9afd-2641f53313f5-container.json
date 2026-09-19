@@ -1,1 +1,0 @@
-{"uuid":"5294a628-a560-45ad-9afd-2641f53313f5","name":"API Automation Test Suite","children":["b12b67df-c321-4567-9f8f-e14844e3f7d3"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1789808243720,"stop":1789808243944}],"afters":[],"start":1789808243711,"stop":1789808255137}
